@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', [DemoController::class, 'DemoAction']);
-Route::get('/', [DemoController::class, 'unionFunction']);
+// Route::get('/', [DemoController::class, 'unionFunction']);
+Route::get('/', [DemoController::class, 'advanceWhereClause']);

@@ -19,14 +19,21 @@ class DemoController extends Controller
     //     return $advancedJoin;
     // }
 
-    // Basic where cluases
-    // = (equal to)
-    // != (not equal)
+    // using union function //
+    // public function unionFunction(){
+    //     $query1 = DB::table('product_carts')->where('size', '=', 'x');
+    //     $query2 = DB::table('product_carts')->where('product_id', '>', '4');
+    //     $result = $query2->union($query1)->get();
+    //     return $result;
+    // }
 
-    public function unionFunction(){
-        $query1 = DB::table('product_carts')->where('size', '=', 'x');
-        $query2 = DB::table('product_carts')->where('product_id', '>', '4');
-        $result = $query2->union($query1)->get();
-        return $result;
+    // ------------using advanced where clause------------ //
+    public function advanceWhereClause(){
+        $query = DB::table('product_carts')
+        ->where('color', 'like', '%gr%')
+        // ->whereNot('product_id', '=', 2)
+        ->get();
+        return $query;
     }
+
 }
