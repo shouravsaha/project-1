@@ -30,8 +30,20 @@ class DemoController extends Controller
     // ------------using advanced where clause------------ //
     public function advanceWhereClause(){
         $query = DB::table('product_carts')
-        ->where('color', 'like', '%gr%')
-        // ->whereNot('product_id', '=', 2)
+        // where clause
+        // ->where('color', 'like', '%gr%')
+
+        // where not clause
+        // ->whereNot('size', '<', 30)
+
+        // where between
+        // ->whereBetween('product_id', [1, 20])
+
+        // orderby function
+        // ->orderBy('color', 'asc')
+
+        // random order
+        ->inRandomOrder()
         ->get();
         return $query;
     }
