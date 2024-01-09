@@ -43,7 +43,13 @@ class DemoController extends Controller
         // ->orderBy('color', 'asc')
 
         // random order
-        ->inRandomOrder()
+        // ->inRandomOrder()->first();
+
+        //skip and take value
+        ->skip(1)
+        ->take(2)
+        ->skip(1)
+        ->take(1)
         ->get();
         return $query;
     }
