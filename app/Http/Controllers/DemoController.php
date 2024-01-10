@@ -72,10 +72,19 @@ class DemoController extends Controller
     // }
 
     // ----------this is update function----------
-    public function update(request $request){
-        DB::table('brands')
-        ->where('id', '=', $request->id)
-        ->update($request->input());
+    // public function update(request $request){
+    //     DB::table('brands')
+    //     ->where('id', '=', $request->id)
+    //     ->update($request->input());
+    //     return true;
+    // }
+
+    // ----------this is update increment or decrement function----------
+    public function update(Request $request){
+        DB::table('products')
+        ->where('id', $request->id)
+        // ->increment('price', 5);
+        ->decrement('price', 5);
         return true;
     }
 
