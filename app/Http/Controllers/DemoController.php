@@ -28,8 +28,8 @@ class DemoController extends Controller
     // }
 
     // ------------using advanced where clause------------ //
-    public function advanceWhereClause(){
-        $query = DB::table('product_carts')
+    // public function advanceWhereClause(){
+    //     $query = DB::table('brands')
         // where clause
         // ->where('color', 'like', '%gr%')
 
@@ -46,12 +46,29 @@ class DemoController extends Controller
         // ->inRandomOrder()->first();
 
         //skip and take value
-        ->skip(1)
-        ->take(2)
-        ->skip(1)
-        ->take(1)
-        ->get();
-        return $query;
+        // ->skip(1)
+        // ->take(2)
+        // ->skip(1)
+        // ->take(1)
+
+        // group by and having function
+        // ->groupBy('color')
+        // ->having('product_id', '=', 3)
+        // ->get();
+
+        // insert function
+        // ->insert([
+        //     'brandName' => 'demo brand',
+        //     'brandImg' => 'demo image'
+        // ]);
+        // return true;
+    // }
+
+    // This is insert function
+    public function insert(Request $request){
+        DB::table('brands')
+        ->insert($request->input());
+        return true;
     }
 
 }
