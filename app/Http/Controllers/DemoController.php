@@ -80,12 +80,20 @@ class DemoController extends Controller
     // }
 
     // ----------this is update increment or decrement function----------
-    public function update(Request $request){
-        DB::table('products')
-        ->where('id', $request->id)
-        // ->increment('price', 5);
-        ->decrement('price', 5);
-        return true;
+    // public function update(Request $request){
+    //     DB::table('products')
+    //     ->where('id', $request->id)
+    //     // ->increment('price', 5);
+    //     ->decrement('price', 5);
+    //     return true;
+    // }
+
+    // ----------this is delete function----------
+    public function delete(Request $request){
+       $result = DB::table('products')
+            ->where('id', $request->id)
+            ->delete();
+            return true;
     }
 
 
