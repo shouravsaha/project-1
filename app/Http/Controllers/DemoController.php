@@ -89,11 +89,16 @@ class DemoController extends Controller
     // }
 
     // ----------this is delete function----------
-    public function delete(Request $request){
-       $result = DB::table('products')
-            ->where('id', $request->id)
-            ->delete();
-            return true;
+    // public function delete(Request $request){
+    //    $result = DB::table('products')
+    //         ->where('id', $request->id)
+    //         ->delete();
+    //         return true;
+    // }
+
+    public function data(){
+        $query = DB::table('brands')->select('brandName', 'brandImg')->get();
+        return $query;
     }
 
 
