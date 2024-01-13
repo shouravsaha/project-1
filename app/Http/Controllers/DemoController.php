@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 // use illuminate\Support\Collection;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Query\JoinClause;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -96,10 +97,16 @@ class DemoController extends Controller
     //         return true;
     // }
 
-    public function data(){
-        $query = DB::table('brands')->select('brandName', 'brandImg')->get();
-        return $query;
-    }
+    // chunck result
+
+        DB::table('profiles')
+        ->orderBy('id')
+        ->chunk(5, function (Collection $profiles){
+            echo "chunk completed";
+        }
+
+
+
 
 
 }
