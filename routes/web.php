@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\DemoController;
 use Illuminate\Support\Facades\Route;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Strong;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [DemoController::class, 'DemoAction']);
 // Route::get('/', [DemoController::class, 'unionFunction']);
-Route::get('/', [DemoController::class, 'data']);
+// Route::get('/', [DemoController::class, 'data']);
+// Route::get('/demo', function(){
+//     return "Hello World";
+// });
+
+// Route::parmanentredirect('/demo1', '/demo2');
+Route::get('user/{name}', function(string $name){
+    return 'user'."=".$name;
+})->where('name', '[a-z]');

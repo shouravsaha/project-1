@@ -99,11 +99,9 @@ class DemoController extends Controller
 
     // chunck result
 
-        DB::table('profiles')
-        ->orderBy('id')
-        ->chunk(5, function (Collection $profiles){
-            echo "chunk completed";
-        }
+        // $data = DB::table('profiles')
+        // ->orderBy('id')
+        // ->chunk(5);
 
 
 
