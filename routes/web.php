@@ -24,6 +24,8 @@ use League\CommonMark\Extension\CommonMark\Node\Inline\Strong;
 // });
 
 // Route::parmanentredirect('/demo1', '/demo2');
-Route::get('user/{name}', function(string $name){
-    return 'user'."=".$name;
-})->where('name', '[a-z]');
+// Route::get('user/{name}', function(string $name){
+//     return 'user'."=".$name;
+// })->where('name', '[a-z]');
+
+Route::view('/', 'layouts.index');
